@@ -1,0 +1,6 @@
+.vscode/
+.history/
+shared-classes/bin/
+shared-classes/obj/
+webapp/bin/
+webapp/obj/
