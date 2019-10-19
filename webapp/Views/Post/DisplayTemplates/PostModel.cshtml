@@ -1,0 +1,10 @@
+@using Microsoft.Extensions.Options
+@using webapp
+@model shared_classes.Models.PostModel 
+<tr>
+    <td>@Model.Title</td>
+    <td>@Model.Text</td>
+    <td>
+        @Model.TimePosted.ToString("ddd d MMM")
+    </td>
+</tr>

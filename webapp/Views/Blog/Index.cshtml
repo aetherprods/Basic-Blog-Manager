@@ -1,0 +1,16 @@
+@using shared_classes.Models
+@model IEnumerable<BlogModel>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>AuthorID</th>
+                <th>Date Started</th>
+            </tr>
+            @Html.DisplayForModel()
+        </table>
+    </div>
+</div>
