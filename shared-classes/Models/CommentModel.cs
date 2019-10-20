@@ -2,7 +2,7 @@ using System;
 
 namespace shared_classes.Models
 {
-    public class CommentModel
+    public class CommentModel : IEntityBase
     {
         public CommentModel()
         {

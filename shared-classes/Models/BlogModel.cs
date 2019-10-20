@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace shared_classes.Models
 {
-    public class BlogModel
+    public class BlogModel : IEntityBase
     {
         public int Id { get; set; }
         public int AuthorId { get; set; }
