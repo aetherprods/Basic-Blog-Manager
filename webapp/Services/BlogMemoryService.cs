@@ -20,6 +20,7 @@ namespace webapp.Services
         public Task Add(BlogModel blog)
         {
             blog.ID = Blogs.Max(b => b.ID) + 1;
+            blog.AuthorID = 0; //in the future we will be working with a user object from which we will take this
             blog.DateStarted = DateTime.Now;
             Blogs.Add(blog);
             return Task.CompletedTask;

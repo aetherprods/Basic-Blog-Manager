@@ -20,6 +20,7 @@ namespace webapp.Controllers
         public async Task<IActionResult> Index(int blogId)
         {
             var blog = await _blogService.GetById(blogId);
+            ViewBag.BlogID = blogId;
             ViewBag.Title = $"{blog.Name}'s Posts";
             
             return View(await _postService.GetAll(blogId));

@@ -30,7 +30,7 @@ namespace webapp.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Add(BlogModel model)
-        {   
+        {              
             if (ModelState.IsValid)
                 await this.blog.Add(model);
 

@@ -33,6 +33,7 @@ namespace webapp.Services
         public Task Add(PostModel post)
         {
             post.ID = _posts.Max(p => p.ID) + 1;
+            post.TimePosted = DateTime.Now;
             _posts.Add(post);
 
             return Task.CompletedTask;
