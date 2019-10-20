@@ -4,3 +4,5 @@ shared-classes/bin/
 shared-classes/obj/
 webapp/bin/
 webapp/obj/
+webapi/bin/
+webapi/obj/
