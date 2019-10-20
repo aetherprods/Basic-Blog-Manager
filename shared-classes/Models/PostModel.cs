@@ -5,9 +5,9 @@ namespace shared_classes.Models
 {
     public class PostModel
     {
-        public int ID { get; set; }
-        public int BlogID { get; set; }
-        public int AuthorID { get; set; }
+        public int Id { get; set; }
+        public int BlogId { get; set; }
+        public int AuthorId { get; set; }
         public string Title { get; set; }
         public string Text { get; set; }
         public DateTime TimePosted { get; set; }

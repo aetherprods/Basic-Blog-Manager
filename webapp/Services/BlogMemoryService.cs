@@ -14,13 +14,13 @@ namespace webapp.Services
         public BlogMemoryService()
         {
             Blogs = new List<BlogModel> { };
-            Blogs.Add(new BlogModel {ID = 1, AuthorID = 1, Name = "The Scromps", DateStarted = DateTime.Now});
-            Blogs.Add(new BlogModel {ID = 2, AuthorID = 2, Name = "The Scobies", DateStarted = DateTime.Now});
+            Blogs.Add(new BlogModel {Id = 1, AuthorId = 1, Name = "The Scromps", DateStarted = DateTime.Now});
+            Blogs.Add(new BlogModel {Id = 2, AuthorId = 2, Name = "The Scobies", DateStarted = DateTime.Now});
         }
         public Task Add(BlogModel blog)
         {
-            blog.ID = Blogs.Max(b => b.ID) + 1;
-            blog.AuthorID = 0; //in the future we will be working with a user object from which we will take this
+            blog.Id = Blogs.Max(b => b.Id) + 1;
+            blog.AuthorId = 0; //in the future we will be working with a user object from which we will take this
             blog.DateStarted = DateTime.Now;
             Blogs.Add(blog);
             return Task.CompletedTask;
@@ -31,7 +31,7 @@ namespace webapp.Services
         }
         public Task<BlogModel> GetById(int id)
         {
-            return Task.Run(() => Blogs.First(b => b.ID==id));
+            return Task.Run(() => Blogs.First(b => b.Id==id));
         }
     }
 }

@@ -2,11 +2,11 @@
 @using webapp
 @model shared_classes.Models.BlogModel
 <tr>
-    <td>@Model.ID</td>
+    <td>@Model.Id</td>
     <td>@Model.Name</td>
-    <td>@Model.AuthorID</td>
+    <td>@Model.AuthorId</td>
     <td>@Model.DateStarted.ToString("ddd d MMM")</td>
     <td>
-        <a asp-controller="Post" asp-action="Index" asp-route-blogId="@Model.ID">Posts</a>
+        <a asp-controller="Post" asp-action="Index" asp-route-blogId="@Model.Id">Posts</a>
     </td>
 </tr>
