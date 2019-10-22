@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using shared_classes.Models;
 
 namespace shared_classes.Data
 {
-    public class CommentRepository : EntityBaseMemoryRepository<CommentModel>, ICommentRepository
+    public class CommentRepository : EntityBaseRepository<CommentModel>, ICommentRepository
     {
-        public CommentRepository(ICollection<CommentModel> list) : base(list) { }
+        public CommentRepository(BlogDbContext context) : base(context) { }
     }
 }
