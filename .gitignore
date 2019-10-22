@@ -6,3 +6,4 @@ webapp/bin/
 webapp/obj/
 webapi/bin/
 webapi/obj/
+webapi/*.db

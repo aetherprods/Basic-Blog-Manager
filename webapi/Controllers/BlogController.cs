@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using shared_classes.Data;
@@ -35,6 +36,7 @@ namespace webapi.Controllers
         [HttpPost]
         public IActionResult Add([FromBody]BlogModel blog)
         {
+            blog.DateStarted = DateTime.Now;
             _blogRepository.Add(blog);
             _blogRepository.Commit();
 

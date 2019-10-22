@@ -26,30 +26,30 @@ namespace shared_classes.Data
         {
             return _context.Set<T>().FirstOrDefault(predicate);
         }
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _context.Set<T>().AsEnumerable();
         }
-        public IEnumerable<T> GetByExpr(Expression<Func<T, bool>> predicate)
+        public virtual IEnumerable<T> GetByExpr(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>().Where(predicate);
         }
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             EntityEntry dbEntry = _context.Entry<T>(entity);
             _context.Set<T>().Add(entity);
         }
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             EntityEntry dbEntry = _context.Entry<T>(entity);
             dbEntry.State = EntityState.Modified;
         }
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             EntityEntry dbEntry = _context.Entry<T>(entity);
             dbEntry.State = EntityState.Deleted;
         }
-        public void Commit()
+        public virtual void Commit()
         {
             _context.SaveChanges();
         }
