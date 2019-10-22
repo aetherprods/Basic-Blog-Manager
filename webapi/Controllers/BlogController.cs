@@ -43,7 +43,7 @@ namespace webapi.Controllers
             return CreatedAtRoute("GetById", new { id = blog.Id }, blog);
         }
 
-        //[HttpPost]
+        [HttpDelete]
         public IActionResult Delete([FromBody]BlogModel blog)
         {
             _blogRepository.Delete(blog);

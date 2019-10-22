@@ -25,8 +25,10 @@ namespace webapp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IBlogService, BlogMemoryService>();
-            services.AddSingleton<IPostService<IBlogService>, PostMemoryService>();
+            services.AddSingleton<IBlogService, BlogService>();
+            services.AddSingleton<IPostService<IBlogService>, PostService>();
+            services.AddHttpClient("webapi", c =>
+                c.BaseAddress = new Uri("http://localhost:5002"));
 
             services.AddMvc();
         }

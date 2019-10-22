@@ -6,7 +6,7 @@ namespace webapp.Services
 {
     public interface IBlogService
     {
-        List<BlogModel> Blogs { get; }
+        //List<BlogModel> Blogs { get; }
         Task<IEnumerable<BlogModel>> GetAll();
         Task<BlogModel> GetById(int id);
         Task Add(BlogModel blog);
