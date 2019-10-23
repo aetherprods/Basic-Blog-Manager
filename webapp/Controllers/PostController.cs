@@ -20,16 +20,16 @@ namespace webapp.Controllers
         public async Task<IActionResult> Index(int blogId)
         {
             var blog = await _blogService.GetById(blogId);
-            ViewBag.BlogId = blogId;
+            ViewBag.BlogModelId = blogId;
             ViewBag.Title = $"{blog.Name}'s Posts";
             
-            return View(await _postService.GetAll(blogId));
+            return View(blog.Posts);
         }
 
         public IActionResult Add(int blogId)
         {
             ViewBag.Title = "Add Post";
-            return View(new PostModel {BlogId = blogId});
+            return View(new PostModel {BlogModelId = blogId});
         }
 
         [HttpPost]
@@ -38,7 +38,7 @@ namespace webapp.Controllers
             if (ModelState.IsValid)
                 await _postService.Add(post);
             
-            return RedirectToAction("Index", new {blogId = post.BlogId});
+            return RedirectToAction("Index", new {blogId = post.BlogModelId});
         }
     }
 }

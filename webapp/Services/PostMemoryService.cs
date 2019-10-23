@@ -14,14 +14,14 @@ namespace webapp.Services
         {
             this._blogService = blogService;
 
-            _posts.Add(new PostModel {AuthorId = 1, BlogId = 0, Id = 1, Title = "How to Eat Scromps", Text = "This is how you eat scrumps", TimePosted = DateTime.Now});
-            _posts.Add(new PostModel {AuthorId = 2, BlogId = 0, Id = 1, Title = "How to Make Scobies", Text = "This is how you make scobies", TimePosted = DateTime.Now});
+            _posts.Add(new PostModel {AuthorId = 1, BlogModelId = 0, Id = 1, Title = "How to Eat Scromps", Text = "This is how you eat scrumps", TimePosted = DateTime.Now});
+            _posts.Add(new PostModel {AuthorId = 2, BlogModelId = 0, Id = 1, Title = "How to Make Scobies", Text = "This is how you make scobies", TimePosted = DateTime.Now});
         }
         public Task<IEnumerable<PostModel>> GetAll(int blogId)
         {
             return Task.Run(() => 
                 from post in _posts
-                where post.BlogId == blogId
+                where post.BlogModelId == blogId
                 select post
                 );
         }

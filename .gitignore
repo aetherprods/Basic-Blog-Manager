@@ -7,3 +7,4 @@ webapp/obj/
 webapi/bin/
 webapi/obj/
 webapi/*.db
+webapi/Migrations/
