@@ -23,11 +23,11 @@ namespace webapi.Controllers
             var blogs = _blogRepository.GetAll();
             if (!blogs.Any())
                 return new NoContentResult();
-            
+
             return new ObjectResult(blogs);
         }
 
-        [HttpGet("{id}", Name = "GetById")]
+        [HttpGet("{id}", Name = "GetBlogById")]
         public BlogModel GetById(int id)
         {
             return _blogRepository.GetById(id);
@@ -40,7 +40,7 @@ namespace webapi.Controllers
             _blogRepository.Add(blog);
             _blogRepository.Commit();
 
-            return CreatedAtRoute("GetById", new { id = blog.Id }, blog);
+            return CreatedAtRoute("GetBlogById", new { id = blog.Id }, blog);
         }
 
         [HttpDelete]
