@@ -32,6 +32,7 @@ namespace webapi
                 b => b.MigrationsAssembly("webapi")));
 
             services.AddScoped<IBlogRepository, BlogRepository>();
+            services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ICommentRepository, CommentRepository>();
         }
 

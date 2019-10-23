@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using shared_classes.Models;
 
 namespace shared_classes.Data
@@ -12,8 +13,15 @@ namespace shared_classes.Data
         {
             _posts = posts;
             
-            _posts.Add(new PostModel {AuthorId = 1, BlogId = 1, Id = 1, Title = "How to Eat Scromps", Text = "This is how you eat scrumps", TimePosted = DateTime.Now});
-            _posts.Add(new PostModel {AuthorId = 2, BlogId = 2, Id = 1, Title = "How to Make Scobies", Text = "This is how you make scobies", TimePosted = DateTime.Now});
+            //_posts.Add(new PostModel {AuthorId = 1, BlogId = 1, Id = 1, Title = "How to Eat Scromps", Text = "This is how you eat scrumps", TimePosted = DateTime.Now});
+            //_posts.Add(new PostModel {AuthorId = 2, BlogId = 2, Id = 1, Title = "How to Make Scobies", Text = "This is how you make scobies", TimePosted = DateTime.Now});
+        }
+
+        public IEnumerable<PostModel> GetAll(int blogId)
+        {
+            return (from post in _posts
+                where post.Id == blogId
+                select post).AsEnumerable();
         }
     }
 }

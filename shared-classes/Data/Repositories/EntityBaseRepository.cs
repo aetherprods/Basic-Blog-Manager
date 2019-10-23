@@ -18,7 +18,7 @@ namespace shared_classes.Data
         {
             _context = context;
         }
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return _context.Set<T>().FirstOrDefault(b => b.Id==id);
         }
